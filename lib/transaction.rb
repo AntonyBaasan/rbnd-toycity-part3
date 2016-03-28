@@ -22,7 +22,6 @@ class Transaction
     def self.find(id)
         @@all_transactions.find {|p| p.id == id }
     end
-
     
     def self.all
         @@all_transactions
@@ -33,8 +32,8 @@ class Transaction
         @@all_transactions.push(transaction)    
     end
     
-    def update_product_stock
-        @product.stock -= 1
+    def update_product_stock    
+        @product.purchase
     end
 
 end
