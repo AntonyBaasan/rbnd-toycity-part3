@@ -23,16 +23,25 @@ class Transaction
         @@all_transactions.find {|p| p.id == id }
     end
     
+    def self.find_by_customer(customer)
+        @@all_transactions.find {|t| t.customer == customer }
+    end
+    
+    def self.find_by_product(product)
+        @@all_transactions.find {|t| t.product == product }
+    end
+    
     def self.all
         @@all_transactions
     end
     
     private 
+    
     def push_to_all_list(transaction)
-        @@all_transactions.push(transaction)    
+        @@all_transactions.push(transaction)
     end
     
-    def update_product_stock    
+    def update_product_stock 
         @product.purchase
     end
 

@@ -42,13 +42,13 @@ class Product
         (@title == other_object.title && @price == other_object.price && @stock == other_object.stock)
     end
     
-    
     private 
+    
     def push_to_all_list(product)
         if(@@all_products.include?(product))
             raise DuplicateProductError, "'#{product.title}' already exists"
         end
           
-        @@all_products.push(product)    
+        @@all_products.push(product)
     end
 end

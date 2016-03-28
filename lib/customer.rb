@@ -7,6 +7,7 @@ class Customer
     
     def initialize params={}
         @name = params[:name]
+        @purchase_history = []
         
         push_to_all_list self
     end 
