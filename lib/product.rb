@@ -22,7 +22,11 @@ class Product
     end
     
     def self.find_by_title(search_title)
-        @@all_products.find {|p| p.title == search_title}
+        @@all_products.find {|p| p.title == search_title   }
+    end
+    
+    def self.in_stock
+        @@all_products.select {|p| p.stock > 0}
     end
     
     # override equality operator
