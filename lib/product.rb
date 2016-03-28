@@ -13,14 +13,23 @@ class Product
         push_to_all_list self
     end
     
+    def in_stock?
+        @stock > 0
+    end
+    
     def self.all
         @@all_products
+    end
+    
+    def self.find_by_title(search_title)
+        @@all_products.find {|p| p.title == search_title}
     end
     
     # override equality operator
     def ==(other_object)
         (@title == other_object.title && @price == other_object.price && @stock == other_object.stock)
     end
+    
     
     private 
     def push_to_all_list(product)
