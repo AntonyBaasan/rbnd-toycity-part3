@@ -19,6 +19,11 @@ class Transaction
         update_product_stock
     end
     
+    def self.find(id)
+        @@all_transactions.find {|p| p.id == id }
+    end
+
+    
     def self.all
         @@all_transactions
     end
