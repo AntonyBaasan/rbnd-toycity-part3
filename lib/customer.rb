@@ -23,6 +23,10 @@ class Customer
         (@name == other_object.name)
     end
 
+    def purchase product
+        Transaction.new(self, product)
+    end
+    
     private 
     def push_to_all_list(customer)
         if(@@all_customers.include?(customer))
