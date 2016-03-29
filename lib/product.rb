@@ -18,7 +18,7 @@ class Product
     end
     
     def purchase
-        unless(in_stock!)
+        unless(in_stock?)
             raise OutOfStockError, "'#{@title}' is out of stock"
         end
         
