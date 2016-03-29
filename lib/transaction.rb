@@ -1,7 +1,6 @@
 require_relative "errors"
 
 class Transaction
-    attr_reader :id
     attr_accessor :customer, :product, :id
 
     @@id = 1

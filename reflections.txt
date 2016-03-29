@@ -3,13 +3,14 @@
     About an hour and half
 
 2) What was the most rewarding challenge you conquered?
+    So far it is pretty clear.
     
-
 3) What two additional features did you build? Why?
-    - Base class for all three classes - Customer, Transaction, Product.
     - Override "==" operator to make available to use "include?" method (by fields)
     - Search transaction by customer and product 
     
 4) Where do you still have room to grow?
     - Use Inheritence? I have no idea where to use it, please tell me detailed explanation
+        (detail: Let me explain more above. So I see that Customer, Product and Transaction have common logics.
+        Do you see any opportunities to have parent class for these classes, that would improve the code?) 
     

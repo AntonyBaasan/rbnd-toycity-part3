@@ -18,7 +18,7 @@ class Product
     end
     
     def purchase
-        if(@stock == 0)
+        unless(in_stock!)
             raise OutOfStockError, "'#{@title}' is out of stock"
         end
         
@@ -30,11 +30,11 @@ class Product
     end
     
     def self.find_by_title(search_title)
-        @@all_products.find {|p| p.title == search_title   }
+        @@all_products.find {|p| p.title == search_title }
     end
     
     def self.in_stock
-        @@all_products.select {|p| p.stock > 0}
+        @@all_products.select {|p| p.in_stock? }
     end
     
     # override equality operator
